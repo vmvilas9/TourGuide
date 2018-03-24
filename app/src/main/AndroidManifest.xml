@@ -15,7 +15,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCD-szqCuE2LIgGLwphta1j3IUMNN-Hbpg" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -23,21 +24,24 @@
         </activity>
         <activity android:name=".RestrauntActivity"
             android:parentActivityName=".MainActivity"
-            android:label="Restraunt">
+            android:label="Restraunt"
+            android:configChanges="orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENTACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
         <activity android:name=".ParkActivity"
             android:parentActivityName=".MainActivity"
-            android:label="Park">
+            android:label="Park"
+            android:configChanges="orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENTACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
         <activity android:name=".FamousPlacesActivity"
             android:parentActivityName=".MainActivity"
-            android:label="Famous Places">
+            android:label="Famous Places"
+            android:configChanges="orientation|screenSize">
             <meta-data
                 android:name="android.support.PARENTACTIVITY"
                 android:value=".MainActivity"/>

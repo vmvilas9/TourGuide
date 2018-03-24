@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -28,16 +29,21 @@ public class TourAdapter extends ArrayAdapter<Tour> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        if(convertView == null){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item,parent,false);
+        View listItemView = convertView;
+        if(listItemView == null){
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item,parent,false);
         }
         Tour currentTour = getItem(position);
-        TextView nameView = (TextView)convertView.findViewById(R.id.place_name);
+        TextView nameView = (TextView)listItemView.findViewById(R.id.place_name);
         nameView.setText(currentTour.getName());
-        TextView addressView = (TextView)convertView.findViewById(R.id.address);
+        TextView addressView = (TextView)listItemView.findViewById(R.id.address);
         addressView.setText(currentTour.getAddress());
-        RatingBar ratingBar = (RatingBar)convertView.findViewById(R.id.rating_bar);
+        RatingBar ratingBar = (RatingBar)listItemView.findViewById(R.id.rating_bar);
         ratingBar.setRating(currentTour.getRating());
-        return convertView;
+        ImageView imageView = (ImageView)listItemView.findViewById(R.id.image);
+        imageView.setImageBitmap(currentTour.getImage());
+        TextView phoneView = (TextView)listItemView.findViewById(R.id.phone);
+        phoneView.setText(currentTour.getPhone());
+        return listItemView;
     }
 }

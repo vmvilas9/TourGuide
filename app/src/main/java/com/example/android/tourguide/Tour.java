@@ -1,8 +1,7 @@
 package com.example.android.tourguide;
 
+import android.graphics.Bitmap;
 import android.util.Log;
-
-import com.google.android.gms.common.api.GoogleApi;
 
 /**
  * Created by Admin on 16-03-2018.
@@ -14,13 +13,16 @@ public class Tour{
     final private String mAddress;
     final private String mNumber;
     final private float mRating;
-    public Tour(String name,String address,String number,float rating){
+    final private Bitmap mImage;
+    final private String mPhone;
+    public Tour(String name, String address, String number, float rating,Bitmap image,String phone){
         mName = name;
         mAddress = address;
         mNumber = number;
         mRating = rating;
+        mImage = image;
+        mPhone = phone;
     }
-
     public String getName(){return mName;}
 
     public String getAddress(){return mAddress;}
@@ -28,4 +30,8 @@ public class Tour{
     public String getNumber(){return mNumber;}
 
     public float getRating(){return mRating;}
+
+    public Bitmap getImage() {return mImage;}
+
+    public String getPhone() {return mPhone;}
 }
